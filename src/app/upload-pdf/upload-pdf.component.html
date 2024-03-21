@@ -1,0 +1,14 @@
+<div>
+    <h2>Upload PDF Files</h2>
+    <form (submit)="onSubmit()">
+        <div>
+            <label for="pdf1">Upload PDF File 1:</label>
+            <input type="file" id="pdf1" (change)="onFileSelected($event, 'pdf1')" accept=".pdf" />
+        </div>
+        <div>
+            <label for="pdf2">Upload PDF File 2:</label>
+            <input type="file" id="pdf2" (change)="onFileSelected($event, 'pdf2')" accept=".pdf" />
+        </div>
+        <button type="submit" [disabled]="!pdfFile1 || !pdfFile2">Compare PDFs</button>
+    </form>
+</div>
