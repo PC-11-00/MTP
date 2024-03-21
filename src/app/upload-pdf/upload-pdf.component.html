@@ -1,17 +1,17 @@
-<div>
-    <h2>Upload PDF Files</h2>
-    <form>
-        <div>
-            <label for="pdf1">Upload PDF File 1:</label>
-            <input type="file" id="pdf1" (change)="onFileSelected($event, 'pdf1')" accept=".pdf" />
-        </div>
-        <div>
-            <label for="pdf2">Upload PDF File 2:</label>
-            <input type="file" id="pdf2" (change)="onFileSelected($event, 'pdf2')" accept=".pdf" />
-        </div>
-        <button type="submit" (click)="onSubmit($event)" [disabled]="!pdfFile1 || !pdfFile2">Compare PDFs</button>
-        <div *ngIf="plagiarismScore !== null">
-            <h3>Plagiarism Score: {{ plagiarismScore }}</h3>
-        </div>
-    </form>
+<div class="background">
+    <div class="container">
+        <h2>Upload PDF Files</h2>
+        <form class="form">
+            <div class="file-input">
+                <input type="file" id="pdf1" (change)="onFileSelected($event, 'pdf1')" accept=".pdf" />
+            </div>
+            <div class="file-input">
+                <input type="file" id="pdf2" (change)="onFileSelected($event, 'pdf2')" accept=".pdf" />
+            </div>
+            <button type="submit" mat-raised-button color="primary" (click)="onSubmit($event)" [disabled]="!pdfFile1 || !pdfFile2">Compare PDFs</button>
+            <div *ngIf="plagiarismScore !== null" class="result">
+                <h3>Plagiarism Score: {{ plagiarismScore }}</h3>
+            </div>
+        </form>
+    </div>
 </div>
